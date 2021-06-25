@@ -12003,10 +12003,10 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
-mediastoresdk-iwona@1.0.77:
-  version "1.0.77"
-  resolved "https://registry.yarnpkg.com/mediastoresdk-iwona/-/mediastoresdk-iwona-1.0.77.tgz#2dfd3f88c8e1186e00505f316bfa1b2b6fe5ce19"
-  integrity sha512-RIkviAUC004PJez45K1LA/sI7JIbMJXVXIwyTiH62kLpYa6Fvjcc9X1zh5ivf42bo0ZqkXfrJGxwpes0A5pnTw==
+mediastoresdk-iwona@1.0.78:
+  version "1.0.78"
+  resolved "https://registry.yarnpkg.com/mediastoresdk-iwona/-/mediastoresdk-iwona-1.0.78.tgz#d84975b2ac3c098cc9fab15dc40c6b670a741b3b"
+  integrity sha512-xRFi9rjPD64r5pqaWN2W2s9ZrFRw3ayLkSnvno78TjCUTRXzpIdMghMbB44V1Fnvqv6udS/grqS2/Fpw6rlczw==
   dependencies:
     "@babel/core" "7.14.0"
     "@reduxjs/toolkit" "^1.5.1"
