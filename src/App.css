@@ -2,16 +2,21 @@
   position: relative;
 }
 .AppAuth{
-  padding: 20px;
+  padding: 20px 0;
 }
 .menu{
   list-style: none;
   display: flex;
   justify-content: flex-end;
-  padding: 0 20px;
+  align-items: center;
+
 }
 .menu li{
-  margin-left: 10px;
+  margin-left: 20px;
+}
+.menu li a{
+  color: #4EB7A1;
+  font-weight: bold;
 }
 button{
   padding: 12px 25px;
@@ -47,4 +52,7 @@ button{
 }
 .popupContent header a{
   display: none;
+}
+.myAccWrapper {
+  padding-top: 100px ;
 }

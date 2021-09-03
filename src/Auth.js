@@ -1,44 +1,44 @@
-import { useState } from 'react';
+import { useEffect, useContext } from 'react';
 import './App.css';
-import { Login, Register, OfferContainer } from 'mediastoresdk-iwona';
+import { Auth as MediastoreAuth } from '@cleeng/mediastore-sdk';
+import AuthContext from './components/AuthContext/AuthContext';
+import { NavLink } from 'react-router-dom';
+import { usePopupsContext, popupTypes } from './components/Popups/Popups';
 
 const Auth = () => {
-  const [isPopupOpened, setIsPopupOpened] = useState(false);
-  const [popupType, setPopupType] = useState('');
+  const {isAuthenticated, setIsAuthenticated} = useContext(AuthContext);
+  const {showModal} = usePopupsContext();
+
+
+  useEffect(() => {
+    if (MediastoreAuth.isLogged()) {
+      setIsAuthenticated(true);
+    }
+  },)
  
   return (
       <div className="AppAuth">
         <header className="App-header">
           <ul className="menu">
-            <li><button onClick={() => {setIsPopupOpened(true); setPopupType('login')}}>Login</button></li>
-            <li><button onClick={() => {setIsPopupOpened(true); setPopupType('register')}}>Register</button></li>
-            <li><a href="/my-account">My Account</a></li>
+            { !isAuthenticated && (
+              <>
+                <li><button onClick={() => showModal(popupTypes.LOGIN)}>Login</button></li>
+                <li><button onClick={() => showModal(popupTypes.REGISTER)}>Register</button></li>
+              </>
+            )}
+            { isAuthenticated && (
+              <>
+                <li>
+                  <NavLink to="/">To main page</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/acc">My Account</NavLink>
+                </li>
+                <li><button onClick={() => {MediastoreAuth.logout(false, '', setIsAuthenticated)}}>Logout</button></li>
+              </>
+            )}
           </ul>
         </header>
-        <main>
-        <button onClick={() => {setIsPopupOpened(true); setPopupType('checkout')}}>Buy</button>
-          {isPopupOpened && (
-            <div className="popupWrapper" onClick={() => {
-                setIsPopupOpened(false);
-              }}>
-              <div className="popupContent" onClick={(event) => {
-                event.stopPropagation(); 
-              }}>
-                {popupType === 'login' && (
-                  <Login urlProps={{location: {search: 'offerId=S533261892_PL'}}}/>
-
-                )}
-                {popupType === 'register' && (
-                  <Register urlProps={{location: {search: 'offerId=S533261892_PL'}}}/>
-
-                )}
-                {popupType === 'checkout' && (
-                  <OfferContainer urlProps={{location: {search: 'offerId=S533261892_PL'}}}/>
-                )}
-              </div>
-            </div>
-          )}
-        </main>
       </div>
   );
 }
