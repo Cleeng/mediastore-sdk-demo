@@ -1,0 +1,65 @@
+
+.msd__header{
+  background: #292525;
+  border-bottom: none;
+}
+.msd__header div{
+  background-image: url('./logo\ —\ white.png');
+  background-size: auto 60%;
+}
+.msd__auth-wrapper{
+  background: #292525;
+}
+.msd__input__wrapper:focus-within{
+  border-color:#f1f2f7; 
+}
+.msd__input__wrapper:focus-within .msd__input__label{
+  color: #fff;
+}
+.msd__input{
+  color: #fff;
+}
+.msd__input__label{
+  background: #292525;
+  color: #fff;
+}
+
+.msd__input__label:after{
+  background: inherit;
+  color: #fff;
+}
+
+.msd__error{
+  color: #ff2828;
+}
+.msd__button{
+  border-radius: 3px;
+  padding: 15px;
+}
+.msd__button--confirm{
+  background-color: #435dc5;
+}
+
+.msd__button--link{
+  color: #fff;
+  padding: 0;
+}
+
+.msd__footer{
+  background: #292525;
+  border-top: none;
+}
+.msd__footer span{
+  color: #fff;
+}
+
+/* register */
+.msd__consents{
+  color: white;
+}
+.msd__consents__frame--error {
+  border-color: #ff2828;
+}
+.msd__consents__error{
+  color: #ff2828;
+}
