@@ -8,7 +8,7 @@ import {
   BannerSubheading,
   BuyButtonStyled,
   HomePageContentStyled,
-  // ListOfComponentsStyled,
+  ListOfComponentsStyled,
   ComponentItemStyled,
   ComponentTitleStyled,
   ComponentWrapperStyled
@@ -26,7 +26,8 @@ import {
   UpdateProfile,
   Capture,
   Consents,
-  CheckoutConsents
+  CheckoutConsents,
+  PasswordReset
 } from '@cleeng/mediastore-sdk';
 
 
@@ -45,7 +46,7 @@ const HomePage = () => {
         </BannerContentStyled>
       </BannerStyled>
       <HomePageContentStyled>
-        {/* <ListOfComponentsStyled>
+        <ListOfComponentsStyled>
 
           <ComponentItemStyled>
             <ComponentTitleStyled>Register</ComponentTitleStyled>
@@ -58,6 +59,13 @@ const HomePage = () => {
             <ComponentTitleStyled>Login</ComponentTitleStyled>
             <ComponentWrapperStyled>
               <Login />
+            </ComponentWrapperStyled>
+          </ComponentItemStyled>
+
+          <ComponentItemStyled>
+            <ComponentTitleStyled>PasswordReset</ComponentTitleStyled>
+            <ComponentWrapperStyled>
+              <PasswordReset />
             </ComponentWrapperStyled>
           </ComponentItemStyled>
 
@@ -105,7 +113,7 @@ const HomePage = () => {
             <ComponentWrapperStyled>
               <CheckoutConsents />
             </ComponentWrapperStyled>
-          </ComponentItemStyled> */}
+          </ComponentItemStyled> *
 
           {/* <ComponentItemStyled>
             <ComponentTitleStyled>Capture</ComponentTitleStyled>
@@ -114,7 +122,7 @@ const HomePage = () => {
             </ComponentWrapperStyled>
           </ComponentItemStyled> */}
 
-        {/* </ListOfComponentsStyled> */}
+        </ListOfComponentsStyled>
       </HomePageContentStyled>
     </HomePageWrapperStyled>
   )

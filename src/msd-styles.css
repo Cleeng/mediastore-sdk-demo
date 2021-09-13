@@ -63,3 +63,90 @@
 .msd__consents__error{
   color: #ff2828;
 }
+.msd__button--navLink{
+  color: #fff;
+}
+.msd__checkout-wrapper{
+  background: #292525;
+}
+.msd__subscription-card{
+  background: #191717;
+  border: 1px solid #3e3939;
+}
+.msd__subscription-card__icon{
+  background-color: #3a1846;
+  color: #AB68BC;
+}
+.msd__subscription-text__wrapper,
+.msd__subscription-price, 
+.msd__price-summary__label,
+.msd__price-summary__ammount,
+.msd__section-header,
+.msd__price-summary,
+.msd__price-summary__total--label,
+.msd__price-summary__total--ammount{
+  color: #e1e5e6 !important;
+}
+.msd__coupon-input__wrapper--inner{
+  border:none;
+}
+.msd__button--primary{
+  opacity: 1;
+}
+.msd__coupon-input__wrapper--inner{
+  border-radius: 6px;
+  border: 1px solid #484950;
+  background: transparent;
+}
+.msd__coupon-input__input{
+  background: transparent;
+  color: #e8e8e8;
+}
+.msd__coupon-input__close{
+  padding: 0;
+  background: #515364;
+}
+.msd__coupon-input__close svg{
+  fill: #ececec;
+}
+.msd__coupon-input__message{
+  color: #ff2828;
+}
+.msd__payment{
+  background: #292525;
+  border-top: none;
+}
+.msd__payment__methods .msd__button--simple{
+  background: transparent;
+  border-radius: 5px;
+  border-color: #484950;
+}
+.msd__payment__methods .msd__button--simple:not(:disabled):hover{
+  background-color: #151212;
+}
+
+.msd__payment__methods .msd__button--simple path{
+  fill: #e1e5e6;
+}
+.msd__payment__adyen .adyen-checkout__label__text{
+  color: #e1e5e6;
+}
+.msd__payment__adyen .adyen-checkout__input{
+  background: #292525;
+  color: #e1e5e6;
+}
+
+.msd__reset-password{
+  background: #292525;
+  color: #e1e5e6;
+}
+.msd__reset-password__form .msd__button--confirm{
+  width: max-content;
+  margin: auto;
+}
+.msd__consents{
+  background: #292525;
+}
+.msd__consents__title{
+  color: #e1e5e6;
+}
