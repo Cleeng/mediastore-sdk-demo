@@ -20,7 +20,7 @@ import {
   Register,
   Purchase,
   MyAccount,
-  PlanDetails,
+  Subscriptions,
   SubscriptionSwitchesList,
   PaymentInfo,
   UpdateProfile,
@@ -83,7 +83,7 @@ const HomePage = () => {
           <ComponentItemStyled>
             <ComponentTitleStyled>Plan Details</ComponentTitleStyled>
             <ComponentWrapperStyled>
-              <PlanDetails />
+              <Subscriptions />
             </ComponentWrapperStyled>
           </ComponentItemStyled>
 

@@ -200,7 +200,9 @@ fill: #fff;
   background-color: transparent;
   color: #515364;
 }
-.msd__user-profile__wrapper, .msd__payment-details__wrapper{
+.msd__user-profile__wrapper, 
+.msd__payment-details__wrapper, 
+.msd__subscriptions__wrapper{
   background: #292525;
-padding: 20px;
+  padding: 20px;
 }
