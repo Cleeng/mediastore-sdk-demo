@@ -150,3 +150,21 @@
 .msd__consents__title{
   color: #e1e5e6;
 }
+
+/* My account */
+.msd__account-wrapper{
+  height: 100vh;
+}
+.msd__account-sidebar{
+  background: #151212;
+}
+.msd__account-header__mail,
+.msd__account-sidebar__label{
+  color: #fff;
+}
+.msd__account-sidebar__icon path{
+fill: #fff;
+}
+.msd__account-sidebar__link.active path{
+  fill: #3a1846;
+  }
