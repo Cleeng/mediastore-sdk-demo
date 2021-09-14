@@ -167,4 +167,8 @@ fill: #fff;
 }
 .msd__account-sidebar__link.active path{
   fill: #3a1846;
-  }
+}
+
+.msd__account-sidebar__link.active .msd__account-sidebar__label::after{
+  border-bottom: 2px solid #3a1846
+}
