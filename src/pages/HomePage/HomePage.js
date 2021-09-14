@@ -26,7 +26,8 @@ import {
   UpdateProfile,
   Capture,
   Consents,
-  CheckoutConsents
+  CheckoutConsents,
+  PasswordReset
 } from '@cleeng/mediastore-sdk';
 
 
@@ -58,6 +59,13 @@ const HomePage = () => {
             <ComponentTitleStyled>Login</ComponentTitleStyled>
             <ComponentWrapperStyled>
               <Login />
+            </ComponentWrapperStyled>
+          </ComponentItemStyled>
+
+          <ComponentItemStyled>
+            <ComponentTitleStyled>PasswordReset</ComponentTitleStyled>
+            <ComponentWrapperStyled>
+              <PasswordReset />
             </ComponentWrapperStyled>
           </ComponentItemStyled>
 
@@ -105,7 +113,7 @@ const HomePage = () => {
             <ComponentWrapperStyled>
               <CheckoutConsents />
             </ComponentWrapperStyled>
-          </ComponentItemStyled>
+          </ComponentItemStyled> *
 
           {/* <ComponentItemStyled>
             <ComponentTitleStyled>Capture</ComponentTitleStyled>
