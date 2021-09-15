@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import './msd-styles.css';
+// Commented if we want to use config.theme
+// import './msd-styles.css';
 
 import reportWebVitals from './reportWebVitals';
 

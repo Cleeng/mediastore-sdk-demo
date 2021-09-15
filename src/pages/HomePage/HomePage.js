@@ -1,4 +1,6 @@
 
+import { useContext } from 'react';
+import AuthContext from '../../components/AuthContext/AuthContext';
 import {
   HomePageWrapperStyled,
   BannerStyled,
@@ -18,21 +20,23 @@ import { usePopupsContext } from '../../components/Popups/Popups';
 import {
   Login,
   Register,
+  PasswordReset,
   Purchase,
-  MyAccount,
+  // MyAccount,
   Subscriptions,
-  SubscriptionSwitchesList,
   PaymentInfo,
   UpdateProfile,
-  Capture,
-  Consents,
+  // Capture,
+  // Consents,
   CheckoutConsents,
-  PasswordReset
+  TransactionList,
+  SubscriptionSwitches
 } from '@cleeng/mediastore-sdk';
 
 
 const HomePage = () => {
   const { showModal } = usePopupsContext();
+  const { isAuthenticated } = useContext(AuthContext);
 
   return (
     <HomePageWrapperStyled>
@@ -46,6 +50,7 @@ const HomePage = () => {
         </BannerContentStyled>
       </BannerStyled>
       <HomePageContentStyled>
+        { isAuthenticated && (
         <ListOfComponentsStyled>
 
           <ComponentItemStyled>
@@ -72,18 +77,35 @@ const HomePage = () => {
           <ComponentItemStyled>
             <ComponentTitleStyled>Checkout</ComponentTitleStyled>
             <ComponentWrapperStyled>
-              <Purchase />
+              <PasswordReset onSuccess={() => console.log('success')}/>
             </ComponentWrapperStyled>
           </ComponentItemStyled>
 
           <ComponentItemStyled>
-            <ComponentTitleStyled>My Account</ComponentTitleStyled>
+            <ComponentTitleStyled>Checkout</ComponentTitleStyled>
+            <ComponentWrapperStyled>
+              <Purchase onPaymentComplete={() => console.log('complete')}/>
+            </ComponentWrapperStyled>
           </ComponentItemStyled>
 
           <ComponentItemStyled>
             <ComponentTitleStyled>Plan Details</ComponentTitleStyled>
             <ComponentWrapperStyled>
               <Subscriptions />
+            </ComponentWrapperStyled>
+          </ComponentItemStyled>
+
+          <ComponentItemStyled>
+            <ComponentTitleStyled>Subscriptions</ComponentTitleStyled>
+            <ComponentWrapperStyled>
+              <Subscriptions />
+            </ComponentWrapperStyled>
+          </ComponentItemStyled>
+
+          <ComponentItemStyled>
+            <ComponentTitleStyled>Subscription Switches</ComponentTitleStyled>
+            <ComponentWrapperStyled>
+              <SubscriptionSwitches offerId={'S538257415_PL'}/>
             </ComponentWrapperStyled>
           </ComponentItemStyled>
 
@@ -97,7 +119,7 @@ const HomePage = () => {
           <ComponentItemStyled>
             <ComponentTitleStyled>Transactions list</ComponentTitleStyled>
             <ComponentWrapperStyled>
-              Hard to export that component
+              <TransactionList />
             </ComponentWrapperStyled>
           </ComponentItemStyled>
 
@@ -123,6 +145,7 @@ const HomePage = () => {
           </ComponentItemStyled> */}
 
         </ListOfComponentsStyled>
+        )}
       </HomePageContentStyled>
     </HomePageWrapperStyled>
   )

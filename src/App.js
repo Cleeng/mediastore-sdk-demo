@@ -14,7 +14,17 @@ const App = () => {
   useEffect(() => {
     Config.setEnvironment('sandbox');
     Config.setPublisher('898676925');
-    Config.setOffer('S538257415_PL');
+    Config.setOffer('S242980909_PL');
+    Config.setTheme(
+      {
+        "fontColor": "#ffffff",
+        "backgroundColor": "#292525",
+        "cardColor": "#675d5d",
+        "successColor": "#435dc5",
+        "primaryColor": "#435dc5",
+        "loaderColor": "#cccccc"
+      }
+    )
   },[]);
   
   return (

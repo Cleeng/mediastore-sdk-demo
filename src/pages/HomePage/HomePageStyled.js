@@ -74,7 +74,6 @@ export const BuyButtonStyled = styled.button`
 export const HomePageContentStyled = styled.div`
   position: relative;
   width: 100%;
-  min-height: 100vh;
   max-width: 1100px;
   margin: 50px auto;
 `;
