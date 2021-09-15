@@ -2388,10 +2388,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@cleeng/mediastore-sdk@1.0.59":
-  version "1.0.59"
-  resolved "https://registry.yarnpkg.com/@cleeng/mediastore-sdk/-/mediastore-sdk-1.0.59.tgz#48a0763fb1740a11808b3e0dfae5d9ddf9f5f5d5"
-  integrity sha512-kVWJcwxE81nRjBfkhPBhwkjGZf2Qp20kDnDPq84F5sxciO0KTsn/4/kEgyKMc2trLskvy/y3qDRtjgNGqvX4Rw==
+"@cleeng/mediastore-sdk@1.0.67":
+  version "1.0.67"
+  resolved "https://registry.yarnpkg.com/@cleeng/mediastore-sdk/-/mediastore-sdk-1.0.67.tgz#9bbe31b0c4c0b85c1df570cce9e08d4fbb58c976"
+  integrity sha512-6ug4Dg1TWWt2cLMEkDYapHrjGXVSm9EuDLagoaQbsAM8QgVjdzCje8tNbXrcvrUWyijx+b4asI/texoCJ5uCMQ==
   dependencies:
     "@babel/core" "^7.14.6"
     "@reduxjs/toolkit" "^1.5.1"

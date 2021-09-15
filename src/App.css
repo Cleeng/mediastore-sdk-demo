@@ -55,3 +55,7 @@ button{
 .myAccWrapper {
   padding-top: 100px ;
 }
+
+.msd__account-wrapper {
+  height: calc(100vh - 100px) !important;
+}
