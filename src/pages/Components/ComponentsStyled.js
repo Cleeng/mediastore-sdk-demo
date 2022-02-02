@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import cover from './cover.jpeg';
 
 export const HomePageWrapperStyled = styled.div`
   position: relative;
   background: white;
-  height: 100vh;
+  padding-top: 160px;
+  min-height: 100vh;
   width: 100%;
 `;
 
@@ -18,7 +18,6 @@ export const BannerBgStyled = styled.div`
   position: absolute;
   height: 100%;
   width: 100%;
-  background-image: url(${cover});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -75,7 +74,7 @@ export const HomePageContentStyled = styled.div`
   position: relative;
   width: 100%;
   max-width: 1100px;
-  margin: 50px auto;
+  margin: 0 auto;
 `;
 
 export const ListOfComponentsStyled = styled.ul`
@@ -88,11 +87,10 @@ export const ComponentTitleStyled = styled.h4`
   font-size: 26px;
   font-weight: bold;
   color: #4EB7A1;
-  margin: 150px 0 30px 0;
+  margin: 0 0 30px 0;
   text-align: center;
 `;
 
 export const ComponentWrapperStyled = styled.div`
   padding: 50px 150px;
-  /* border: 5px #CCCCCC solid; */
 `;

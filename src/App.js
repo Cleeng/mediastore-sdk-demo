@@ -1,23 +1,21 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { MyAccount as CleengMyAccount, Config, store } from '@cleeng/mediastore-sdk';
+import { MyAccount, Config, store } from '@cleeng/mediastore-sdk';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import HomePage from './pages/HomePage/HomePage';
+import Components from './pages/Components/Components';
 import AuthContext from './components/AuthContext/AuthContext';
 import Header from './components/Header/Header';
 import { Popups } from './components/Popups/Popups';
-import logo from './logo — white.png'
-
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    console.log(logo);
     Config.setEnvironment('sandbox');
     Config.setPublisher('898676925');
-    Config.setOffer('S242980909_PL');
+    Config.setOffer('S573736686_PL');
     Config.setTheme(
       {
         "fontColor": "#ffffff",
@@ -46,11 +44,16 @@ const App = () => {
                       component={() => <HomePage />}
                     />
                     <Route 
+                      path="/components"
+                      exact
+                      component={() => <Components />}
+                    />
+                    <Route 
                       path="/acc"
                       component={({ match }) => (
                         <div className="myAccWrapper">
                           <Header />
-                          <CleengMyAccount routeMatch={match}/>
+                          <MyAccount />
                         </div>
                       )}/>
                   </Switch>

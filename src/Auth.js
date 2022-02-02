@@ -29,7 +29,10 @@ const Auth = () => {
             { isAuthenticated && (
               <>
                 <li>
-                  <NavLink to="/">To main page</NavLink>
+                  <NavLink to="/">Homepage</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/components">Components</NavLink>
                 </li>
                 <li>
                   <NavLink to="/acc">My Account</NavLink>

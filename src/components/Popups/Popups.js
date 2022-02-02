@@ -1,6 +1,6 @@
 
 import { useState, createContext, useContext } from 'react';
-import { Login, Register, OfferContainer } from '@cleeng/mediastore-sdk';
+import { Login, Register, Checkout } from '@cleeng/mediastore-sdk';
 import {
   PopupsWrapperStyled
 } from './PopupsStyled';
@@ -62,7 +62,7 @@ export const Popup = ({popupType}) => {
       
             )}
             {popupType === popupTypes.CHECKOUT && (
-              <OfferContainer onPaymentComplete={() => hideModal()} />
+              <Checkout onSuccess={() => hideModal()} />
             )}
           </div>
         </div>
