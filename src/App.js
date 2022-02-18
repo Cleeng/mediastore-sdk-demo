@@ -15,7 +15,13 @@ const App = () => {
   useEffect(() => {
     Config.setEnvironment('sandbox');
     Config.setPublisher('898676925');
-    Config.setOffer('S573736686_PL');
+    Config.setOffer('S531234647_PL');
+    Config.setMyAccountUrl('http://localhost:3000/acc');
+    Config.setPaypalUrls({
+      successUrl: 'http://localhost:3000/acc',
+      cancelUrl: 'http://localhost:3000/',
+      errorUrl: 'http://localhost:3000/'
+    });
     Config.setTheme(
       {
         "fontColor": "#ffffff",
@@ -52,7 +58,7 @@ const App = () => {
                       path="/acc"
                       component={({ match }) => (
                         <div className="myAccWrapper">
-                          <Header />
+                          <Header color="#675d5d" />
                           <MyAccount />
                         </div>
                       )}/>

@@ -39,7 +39,7 @@ const HomePage = () => {
 
   return (
     <HomePageWrapperStyled>
-      <Header />
+      <Header color="#675d5d" />
       <HomePageContentStyled>
         { isAuthenticated && (
         <ListOfComponentsStyled>

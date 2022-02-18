@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import cover from './cover.jpeg';
+import cover from './cover.jpg';
 
 export const HomePageWrapperStyled = styled.div`
   position: relative;
@@ -23,15 +23,6 @@ export const BannerBgStyled = styled.div`
   background-size: cover;
   background-position: center;
   z-index: 0;
-
-  &::before {
-    position: absolute;
-    content: '';
-    height: 100%;
-    width: 100%;
-    background-color: #000;
-    opacity: 0.7;
-  }
 `;
 
 export const BannerContentStyled = styled.div`

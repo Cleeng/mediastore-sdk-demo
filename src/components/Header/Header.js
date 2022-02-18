@@ -6,9 +6,9 @@ import {
   LogoStyled
 } from './HeaderStyled';
 
-const Header = () => {
+const Header = ({ color }) => {
   return (
-    <HeaderStyled>
+    <HeaderStyled color={color}>
       <LogoStyled src={logo} />
       <Auth/>
     </HeaderStyled>
