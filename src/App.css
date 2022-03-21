@@ -17,6 +17,7 @@
 .menu li a{
   color: #4EB7A1;
   font-weight: bold;
+  text-decoration: none;
 }
 button{
   padding: 12px 25px;
@@ -53,7 +54,7 @@ button{
   display: none;
 }
 .myAccWrapper {
-  padding-top: 100px ;
+  padding-top: 130px ;
 }
 
 .msd__account-wrapper {

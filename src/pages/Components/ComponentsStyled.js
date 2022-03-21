@@ -81,7 +81,9 @@ export const ListOfComponentsStyled = styled.ul`
 
 `;
 
-export const ComponentItemStyled = styled.li``;
+export const ComponentItemStyled = styled.li`
+  list-style: none;
+`;
 
 export const ComponentTitleStyled = styled.h4`
   font-size: 26px;
