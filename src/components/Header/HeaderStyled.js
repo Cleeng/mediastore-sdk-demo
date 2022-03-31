@@ -16,6 +16,6 @@ export const HeaderStyled = styled.header`
 `;
 
 export const LogoStyled = styled.img`
-  height: 50px;
+  height: 32px;
   width: auto;
 `;
