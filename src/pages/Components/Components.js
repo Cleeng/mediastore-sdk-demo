@@ -131,16 +131,20 @@ const HomePage = () => {
               <ComponentWrapperStyled>
                 <CheckoutConsents onSuccess={() => console.log('Checkout onSuccess callback')} />
               </ComponentWrapperStyled>
+              <ComponentTextStyled>
+                If there are no consents fields to update, the loader will be shown
+              </ComponentTextStyled>
             </ComponentItemStyled>
 
             <ComponentItemStyled>
               <ComponentTitleStyled>Capture</ComponentTitleStyled>
               <ComponentWrapperStyled>
-                <Capture onSuccess={() => console.log("no capture fields to updare")} />
+                <Capture onSuccess={() => console.log("capture success clb")} />
               </ComponentWrapperStyled>
               <ComponentTextStyled>
-                If there are no consents fields to update, the loader will be shown
+                If there are no capture fields to update, the loader will be shown
               </ComponentTextStyled>
+
             </ComponentItemStyled>
 
           </ListOfComponentsStyled>
