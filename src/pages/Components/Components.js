@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -9,21 +8,19 @@ import {
   ListOfComponentsStyled,
   ComponentItemStyled,
   ComponentTitleStyled,
+  ComponentTextStyled,
   ComponentWrapperStyled
 } from './ComponentsStyled';
 import Header from '../../components/Header/Header';
-import { usePopupsContext } from '../../components/Popups/Popups';
 import {
   Login,
   Register,
   PasswordReset,
   Purchase,
-  // MyAccount,
   Subscriptions,
   PaymentInfo,
   UpdateProfile,
   Capture,
-  Consents,
   CheckoutConsents,
   TransactionList,
   SubscriptionSwitches,
@@ -34,108 +31,119 @@ import {
 
 const HomePage = () => {
   let history = useHistory();
-  const { showModal } = usePopupsContext();
   const { isAuthenticated } = useContext(AuthContext);
 
   return (
     <HomePageWrapperStyled>
-      <Header color="#675d5d" />
+      <Header />
       <HomePageContentStyled>
-        { isAuthenticated && (
-        <ListOfComponentsStyled>
+        {isAuthenticated && (
+          <ListOfComponentsStyled>
 
-          <ComponentItemStyled>
-            <ComponentTitleStyled>Checkout Wrapper</ComponentTitleStyled>
-            <ComponentWrapperStyled>
-              <Checkout offerId="S592266666_PL" onSuccess={() => history.push('/acc')}/>
-            </ComponentWrapperStyled>
-          </ComponentItemStyled>
+            <ComponentItemStyled>
+              <ComponentTitleStyled>Checkout Wrapper</ComponentTitleStyled>
+              <ComponentWrapperStyled>
+                <Checkout offerId="S531234647_PL" onSuccess={() => history.push('/acc')} />
+              </ComponentWrapperStyled>
+            </ComponentItemStyled>
 
-           <ComponentItemStyled>
-            <ComponentTitleStyled>Register</ComponentTitleStyled>
-            <ComponentWrapperStyled>
-              <Register />
-            </ComponentWrapperStyled>
-          </ComponentItemStyled>
+            <ComponentItemStyled>
+              <ComponentTitleStyled id="register">Register</ComponentTitleStyled>
+              <ComponentWrapperStyled>
+                <Register onSuccess={() => history.push('/')} onHaveAccountClick={() => { window.location = '#login'; return false; }} />
+              </ComponentWrapperStyled>
+            </ComponentItemStyled>
 
-          <ComponentItemStyled>
-            <ComponentTitleStyled>Login</ComponentTitleStyled>
-            <ComponentWrapperStyled>
-              <Login />
-            </ComponentWrapperStyled>
-          </ComponentItemStyled>
+            <ComponentItemStyled>
+              <ComponentTitleStyled id="login">Login</ComponentTitleStyled>
+              <ComponentWrapperStyled>
+                <Login
+                  onSuccess={() => history.push('/')}
+                  onRegisterClick={() => { window.location = '#register'; return false }}
+                  onPasswordResetClick={() => { window.location = '#passwordReset'; return false }} />
+              </ComponentWrapperStyled>
+            </ComponentItemStyled>
 
-          <ComponentItemStyled>
-            <ComponentTitleStyled>PasswordReset</ComponentTitleStyled>
-            <ComponentWrapperStyled>
-            <PasswordReset onSuccess={() => console.log('success')}/>
-            </ComponentWrapperStyled>
-          </ComponentItemStyled>
+            <ComponentItemStyled>
+              <ComponentTitleStyled id="passwordReset">PasswordReset</ComponentTitleStyled>
+              <ComponentWrapperStyled>
+                <PasswordReset onSuccess={() => { console.log('Reset password requested successfully'); history.push('/') }} />
+              </ComponentWrapperStyled>
+            </ComponentItemStyled>
 
-          <ComponentItemStyled>
-            <ComponentTitleStyled>Checkout</ComponentTitleStyled>
-            <ComponentWrapperStyled>
-              <Purchase onPaymentComplete={() => console.log('complete')}/>
-            </ComponentWrapperStyled>
-          </ComponentItemStyled>
+            <ComponentItemStyled>
+              <ComponentTitleStyled>Purchase</ComponentTitleStyled>
+              <ComponentWrapperStyled>
+                <Purchase
+                  offerId="S531234647_PL"
+                  onSuccess={() => history.push('/acc')}
+                />
+              </ComponentWrapperStyled>
+            </ComponentItemStyled>
 
-          <ComponentItemStyled>
-            <ComponentTitleStyled>Plan Details</ComponentTitleStyled>
-            <ComponentWrapperStyled>
-              <PlanDetails />
-            </ComponentWrapperStyled>
-          </ComponentItemStyled>
+            <ComponentItemStyled>
+              <ComponentTitleStyled>Plan Details</ComponentTitleStyled>
+              <ComponentWrapperStyled>
+                <PlanDetails />
+              </ComponentWrapperStyled>
+            </ComponentItemStyled>
 
-          <ComponentItemStyled>
-            <ComponentTitleStyled>Subscriptions</ComponentTitleStyled>
-            <ComponentWrapperStyled>
-              <Subscriptions />
-            </ComponentWrapperStyled>
-          </ComponentItemStyled>
+            <ComponentItemStyled>
+              <ComponentTitleStyled>Subscriptions</ComponentTitleStyled>
+              <ComponentWrapperStyled>
+                <Subscriptions />
+              </ComponentWrapperStyled>
+            </ComponentItemStyled>
 
-          <ComponentItemStyled>
-            <ComponentTitleStyled>Subscription Switches</ComponentTitleStyled>
-            <ComponentWrapperStyled>
-              <SubscriptionSwitches offerId={'S538257415_PL'}/>
-            </ComponentWrapperStyled>
-          </ComponentItemStyled>
+            <ComponentItemStyled>
+              <ComponentTitleStyled>Subscription Switches</ComponentTitleStyled>
+              <ComponentWrapperStyled>
+                <SubscriptionSwitches offerId='S531234647_PL' />
+              </ComponentWrapperStyled>
+              <ComponentTextStyled>
+                'Oops, something went wrong!' error message will be shown when user has no access to the offer S531234647_PL
+              </ComponentTextStyled>
+            </ComponentItemStyled>
 
-          <ComponentItemStyled>
-            <ComponentTitleStyled>Payment details</ComponentTitleStyled>
-            <ComponentWrapperStyled>
-              <PaymentInfo />
-            </ComponentWrapperStyled>
-          </ComponentItemStyled>
+            <ComponentItemStyled>
+              <ComponentTitleStyled>Payment details</ComponentTitleStyled>
+              <ComponentWrapperStyled>
+                <PaymentInfo />
+              </ComponentWrapperStyled>
+            </ComponentItemStyled>
 
-          <ComponentItemStyled>
-            <ComponentTitleStyled>Transactions list</ComponentTitleStyled>
-            <ComponentWrapperStyled>
-              <TransactionList />
-            </ComponentWrapperStyled>
-          </ComponentItemStyled>
+            <ComponentItemStyled>
+              <ComponentTitleStyled>Transactions list</ComponentTitleStyled>
+              <ComponentWrapperStyled>
+                <TransactionList />
+              </ComponentWrapperStyled>
+            </ComponentItemStyled>
 
-          <ComponentItemStyled>
-            <ComponentTitleStyled>User Profile</ComponentTitleStyled>
-            <ComponentWrapperStyled>
-              <UpdateProfile />
-            </ComponentWrapperStyled>
-          </ComponentItemStyled>
+            <ComponentItemStyled>
+              <ComponentTitleStyled>User Profile</ComponentTitleStyled>
+              <ComponentWrapperStyled>
+                <UpdateProfile />
+              </ComponentWrapperStyled>
+            </ComponentItemStyled>
 
-          <ComponentItemStyled>
-            <ComponentTitleStyled>Consents</ComponentTitleStyled>
-            <ComponentWrapperStyled>
-              <CheckoutConsents onSuccess={() => console.log('Checkout onSuccess callback')}/>
-            </ComponentWrapperStyled>
-          </ComponentItemStyled>
+            <ComponentItemStyled>
+              <ComponentTitleStyled>CheckoutConsents</ComponentTitleStyled>
+              <ComponentWrapperStyled>
+                <CheckoutConsents onSuccess={() => console.log('Checkout onSuccess callback')} />
+              </ComponentWrapperStyled>
+            </ComponentItemStyled>
 
-          <ComponentItemStyled>
-            <ComponentTitleStyled>Capture</ComponentTitleStyled>
-            <ComponentWrapperStyled>
-              <Capture onSuccess={() => console.log('Capture onSuccess callback')}/>
-            </ComponentWrapperStyled>
-          </ComponentItemStyled>
+            <ComponentItemStyled>
+              <ComponentTitleStyled>Capture</ComponentTitleStyled>
+              <ComponentWrapperStyled>
+                <Capture onSuccess={() => console.log("no capture fields to updare")} />
+              </ComponentWrapperStyled>
+              <ComponentTextStyled>
+                If there are no consents fields to update, the loader will be shown
+              </ComponentTextStyled>
+            </ComponentItemStyled>
 
-        </ListOfComponentsStyled>
+          </ListOfComponentsStyled>
         )}
       </HomePageContentStyled>
     </HomePageWrapperStyled>

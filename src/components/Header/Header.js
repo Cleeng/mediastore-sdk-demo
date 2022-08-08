@@ -1,16 +1,16 @@
 import Auth from "../../Auth"
-import logo from './images/logo-green.png';
+import logo from './images/logo-png.png';
 
 import {
   HeaderStyled,
   LogoStyled
 } from './HeaderStyled';
 
-const Header = ({ color }) => {
+const Header = ({ isHomePage }) => {
   return (
-    <HeaderStyled color={color}>
+    <HeaderStyled isHomePage={isHomePage}>
       <LogoStyled src={logo} />
-      <Auth/>
+      <Auth />
     </HeaderStyled>
   )
 }
