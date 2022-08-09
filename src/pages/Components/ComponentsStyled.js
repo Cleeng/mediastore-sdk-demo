@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HomePageWrapperStyled = styled.div`
   position: relative;
   background: white;
-  padding-top: 160px;
+  padding: 160px 0;
   min-height: 100vh;
   width: 100%;
 `;
@@ -88,11 +88,19 @@ export const ComponentItemStyled = styled.li`
 export const ComponentTitleStyled = styled.h4`
   font-size: 26px;
   font-weight: bold;
-  color: #4EB7A1;
-  margin: 0 0 30px 0;
+  color: #636574;
+  margin: 50px 0 15px 0;
   text-align: center;
 `;
 
+export const ComponentTextStyled = styled.p`
+  text-align: center;
+  color: #515364;
+  font-size: 13px;
+  margin-top: 5px;
+`
+
 export const ComponentWrapperStyled = styled.div`
-  padding: 50px 150px;
+  border: 1px solid #d3dbe7;
+  margin: 0 100px;
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const HeaderStyled = styled.header`
   position: absolute;
@@ -12,7 +12,15 @@ export const HeaderStyled = styled.header`
   align-items: center;
   padding: 10px 50px;
 
-  background-color: ${ props => props.color ? props.color : 'transparent'};
+  background-color: ${props => props.color ? props.color : 'transparent'};
+  border-bottom: 1px solid #d3dbe7;
+
+  ${props => props.isHomePage && css`
+    border-bottom: none;
+    .menu li a {
+      color: white;
+    }
+  `}
 `;
 
 export const LogoStyled = styled.img`

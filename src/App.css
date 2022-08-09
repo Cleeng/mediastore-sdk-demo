@@ -15,9 +15,10 @@
   margin-left: 20px;
 }
 .menu li a{
-  color: #4EB7A1;
-  font-weight: bold;
+  color: #444;
+  font-weight: normal;
   text-decoration: none;
+  font-size: 15px;
 }
 button{
   padding: 12px 25px;
