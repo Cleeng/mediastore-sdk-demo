@@ -1,7 +1,5 @@
 
-import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import AuthContext from '../../components/AuthContext/AuthContext';
 import {
   HomePageWrapperStyled,
   HomePageContentStyled,
@@ -25,23 +23,23 @@ import {
   TransactionList,
   SubscriptionSwitches,
   Checkout,
-  PlanDetails
+  PlanDetails,
+  Auth as MediastoreAuth
 } from '@cleeng/mediastore-sdk';
 
 
 const HomePage = () => {
   let history = useHistory();
-  const { isAuthenticated } = useContext(AuthContext);
 
   return (
     <HomePageWrapperStyled>
       <Header />
       <HomePageContentStyled>
-        {isAuthenticated && (
+        {MediastoreAuth.isLogged() && (
           <ListOfComponentsStyled>
 
             <ComponentItemStyled>
-              <ComponentTitleStyled>Checkout Wrapper</ComponentTitleStyled>
+              <ComponentTitleStyled>Checkout</ComponentTitleStyled>
               <ComponentWrapperStyled>
                 <Checkout offerId="S531234647_PL" onSuccess={() => history.push('/acc')} />
               </ComponentWrapperStyled>
@@ -82,7 +80,7 @@ const HomePage = () => {
             </ComponentItemStyled>
 
             <ComponentItemStyled>
-              <ComponentTitleStyled>Plan Details</ComponentTitleStyled>
+              <ComponentTitleStyled>PlanDetails</ComponentTitleStyled>
               <ComponentWrapperStyled>
                 <PlanDetails />
               </ComponentWrapperStyled>
@@ -96,7 +94,7 @@ const HomePage = () => {
             </ComponentItemStyled>
 
             <ComponentItemStyled>
-              <ComponentTitleStyled>Subscription Switches</ComponentTitleStyled>
+              <ComponentTitleStyled>SubscriptionSwitches</ComponentTitleStyled>
               <ComponentWrapperStyled>
                 <SubscriptionSwitches offerId='S531234647_PL' />
               </ComponentWrapperStyled>
@@ -106,21 +104,21 @@ const HomePage = () => {
             </ComponentItemStyled>
 
             <ComponentItemStyled>
-              <ComponentTitleStyled>Payment details</ComponentTitleStyled>
+              <ComponentTitleStyled>PaymentInfo</ComponentTitleStyled>
               <ComponentWrapperStyled>
                 <PaymentInfo />
               </ComponentWrapperStyled>
             </ComponentItemStyled>
 
             <ComponentItemStyled>
-              <ComponentTitleStyled>Transactions list</ComponentTitleStyled>
+              <ComponentTitleStyled>TransactionList</ComponentTitleStyled>
               <ComponentWrapperStyled>
                 <TransactionList />
               </ComponentWrapperStyled>
             </ComponentItemStyled>
 
             <ComponentItemStyled>
-              <ComponentTitleStyled>User Profile</ComponentTitleStyled>
+              <ComponentTitleStyled>UpdateProfile</ComponentTitleStyled>
               <ComponentWrapperStyled>
                 <UpdateProfile />
               </ComponentWrapperStyled>
