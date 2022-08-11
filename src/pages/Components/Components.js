@@ -24,7 +24,7 @@ import {
   SubscriptionSwitches,
   Checkout,
   PlanDetails,
-  MediastoreAuth
+  Auth as MediastoreAuth
 } from '@cleeng/mediastore-sdk';
 
 
