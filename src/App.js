@@ -6,6 +6,8 @@ import HomePage from './pages/HomePage/HomePage';
 import Components from './pages/Components/Components';
 import Header from './components/Header/Header';
 import { Popups } from './components/Popups/Popups';
+import '@adyen/adyen-web/dist/adyen.css';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const App = () => {
   Config.setEnvironment('sandbox');
